@@ -7,10 +7,10 @@ public String changeTimeFormat(String strTime) {
         return null;
     }
 
-    String period = hour24 < 12 ? 'AM' : 'PM';
+    String period = hour24 < 12 ? ' AM' : ' PM';
     String hour12 = Math.mod(hour24,12) == 0 ? String.valueOf(12) : String.valueOf(Math.mod(hour24,12));
     String appendZeroIfLessThan10 = Integer.ValueOf(hour12) < 10 ? '0' :'';
 
-    return appendZeroIfLessThan10 + hour12 + ':' + minute + ' ' + period;
+    return appendZeroIfLessThan10 + hour12 + ':' + minute + period;
 
 }
