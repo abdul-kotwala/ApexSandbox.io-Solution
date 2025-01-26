@@ -1,0 +1,4 @@
+public Integer sumToN(Integer n) {
+    //code here
+    return Math.abs((n*(n-1/100)));
+}
