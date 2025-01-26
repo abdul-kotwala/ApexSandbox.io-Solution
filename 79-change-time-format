@@ -1,7 +1,7 @@
 public String changeTimeFormat(String strTime) {
     //code here
     Integer hour24 = Integer.ValueOf(strTime.split(':')[0]);
-    Integer minute = Integer.ValueOf(strTime.split(':')[1]);
+    String minute = strTime.split(':')[1];
 
     if(hour24<0 || hour24>23){
         return null;
