@@ -11,7 +11,7 @@ public String changeTimeFormat(String strTime) {
     }else if(hourInteger == 12){
         return String.valueOf(hourInteger) + ':' + minutes +  ' PM';
     }else{
-        return String.valueOf(hourInteger-12) + ':' + minutes + ' PM';
+        return '0' + String.valueOf(hourInteger-12) + ':' + minutes + ' PM';
     }
 
    
