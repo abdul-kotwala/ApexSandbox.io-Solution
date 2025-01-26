@@ -1,0 +1,8 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+    String hour = strTime.substringBefore(':');
+    String converted12hour = String.valueOf(Math.abs(Integer.valueOf(hour)-12));
+
+    return (converted12hour+':'+substringAfter(':'));
+
+}
