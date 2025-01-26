@@ -1,8 +1,6 @@
 public Boolean isPassed(Boolean passedExam, Boolean passedAssignments, Boolean passedProject) {
     //code here
-    if((passedExam && passedAssignments) || (passedAssignments && passedProject) || (passedProject && passedExam)){
-        return true;
-    }else{
-        return false;
-    }
+    Integer trueCount = (passedExam ? 1 : 0) + (passedAssignments ? 1 : 0) + (passedProject ? 1 : 0);
+    
+    return trueCount >= 2;
 }
