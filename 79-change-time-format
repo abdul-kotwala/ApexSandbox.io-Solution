@@ -1,23 +1,15 @@
 public String changeTimeFormat(String strTime) {
     //code here
-    String hour = strTime.substringBefore(':');
-    String minutes = strTime.substringAfter(':');
-    Integer hourInteger = Math.abs(Integer.valueOf(hour));
+    Integer hour24 = Integer.ValueOf(strTime.split(':')[0]);
+    Integer minute = Integer.ValueOf(strTime.split(':')[1]);
 
-    if(hour =='00'){
-        return  String.valueOf(12) + ':' + minutes + ' AM';
-    }else if(hourInteger < 10){
-        return '0' + String.valueOf(hourInteger) + ':' + minutes +  ' AM';
-    }else if(hourInteger < 12){
-        return String.valueOf(hourInteger) + ':' + minutes +  ' AM';
-    }else if(hourInteger == 12){
-        return String.valueOf(hourInteger) + ':' + minutes +  ' PM';
-    }else if(hourInteger<22){
-        return '0' + String.valueOf(hourInteger-12) + ':' + minutes + ' PM';
-    }else{
-        return String.valueOf(hourInteger-12) + ':' + minutes + ' PM';
+    if(hour24<0 || hour24>23){
+        return null;
     }
 
-   
+    String amOrPm = hour24 < 12 ? 'AM' : 'PM';
+    String hour12 = String.valueOf(Math.mod(hour24,12));
+
+    return hour12 + ':' + minute + amOrPm;
 
 }
