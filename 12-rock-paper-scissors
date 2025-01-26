@@ -1,9 +1,9 @@
 public Integer rockPaperScissors(String player1, String player2) {
-    Map<String,String> winningRule = new Map<String, String>{
+    Map<String,String> winningRule = new Map<String, String>(
         'rock' => 'scissors',
         'paper' => 'rock',
         'scissors' => 'paper'
-    };
+    );
 
     if(winningRule.get(player1) == player2){
         return 1;
