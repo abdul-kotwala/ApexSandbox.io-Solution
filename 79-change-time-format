@@ -4,8 +4,8 @@ public String changeTimeFormat(String strTime) {
     String minutes = strTime.substringAfter(':');
     Integer hourInteger = Math.abs(Integer.valueOf(hour));
 
-    if(hourInteger==0){
-        return '0' + String.valueOf(12) + ':' + minutes + ' AM';
+    if(hour =='00'){
+        return  String.valueOf(12) + ':' + minutes + ' AM';
     }else if(hourInteger <= 12){
         return '0' + String.valueOf(hourInteger) + ':' + minutes +  ' AM';
     }else{
