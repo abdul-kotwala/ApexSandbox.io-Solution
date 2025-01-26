@@ -7,9 +7,9 @@ public String changeTimeFormat(String strTime) {
         return null;
     }
 
-    String amOrPm = hour24 < 12 ? 'AM' : 'PM';
-    String hour12 = String.valueOf(Math.mod(hour24,12));
+    String period = hour24 < 12 ? 'AM' : 'PM';
+    String hour12 = Math.mod(hour24,12) == 0 ? String.valueOf(12) : String.valueOf(Math.mod(hour24,12));
 
-    return hour12 + ':' + minute + amOrPm;
+    return String.format('%02d:%s %s', new List<Object>{hour12, minute, period});
 
 }
