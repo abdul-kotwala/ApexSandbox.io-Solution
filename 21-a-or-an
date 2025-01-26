@@ -1,0 +1,15 @@
+public String aOrAn(String word) {
+   if (String.isBlank(word)) {
+        return null; // Handle null or empty input
+    }
+
+    // Convert the input to lowercase and check if it starts with a vowel
+    List<String> vowelsList = new List<String>{'a', 'e', 'i', 'o', 'u'};
+    String firstChar = word.trim().substring(0, 1).toLowerCase();
+
+    if (vowelsList.contains(firstChar)) {
+        return 'an ' + word;
+    } else {
+        return 'a ' + word;
+    }
+}
