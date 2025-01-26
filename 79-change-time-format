@@ -9,7 +9,8 @@ public String changeTimeFormat(String strTime) {
 
     String period = hour24 < 12 ? 'AM' : 'PM';
     String hour12 = Math.mod(hour24,12) == 0 ? String.valueOf(12) : String.valueOf(Math.mod(hour24,12));
+    String appendZeroIfLessThan10 = Integer.ValueOf(hour12) < 10 ? '0' :'';
 
-    return String.format('%02d:%s %s', new List<Object>{hour12, minute, period});
+    return appendZeroIfLessThan10 + hour12 + ':' + minute + period;
 
 }
