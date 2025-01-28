@@ -10,7 +10,7 @@ public Integer nextPrime(Integer num) {
 }
 
 public Boolean isPrime(Integer num){
-    if(num==1){
+    if(num<=1){
         return false;
     }
     Boolean isPrime = true;
