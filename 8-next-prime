@@ -1,0 +1,23 @@
+public Integer nextPrime(Integer num) {
+    //code here
+    //2,3,5,7,11,13..
+    Integer nextPrime = num;
+    while(!isPrime(num)){
+        num++;
+    }
+    return num;
+    
+}
+
+public Boolean isPrime(Integer num){
+    Boolean isPrime = true;
+    for(Integer i=2; i<num;i++){
+        Integer remainder = Math.mod(num,i);
+        if(remainder == 0){
+            isPrime = false;
+            continue;
+        }
+
+    }
+    return isPrime;
+}
