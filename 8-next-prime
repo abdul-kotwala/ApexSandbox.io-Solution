@@ -13,7 +13,11 @@ public Boolean isPrime(Integer num) {
         return false; 
     } 
 
+
     for (Integer i = 3; i <= Math.sqrt(num); i += 2) {
+        /* why do we need to loop till square root only? 
+           Check basic maths rule for factors and how factors always appears in pairs :) ) 
+        */
         if (Math.mod(num , i) == 0) {
             return false;
         }
