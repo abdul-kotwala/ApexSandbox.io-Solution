@@ -9,7 +9,7 @@ public Integer nextPrime(Integer num) {
 public Boolean isPrime(Integer num) {
     if (num <= 1) return false; 
     if (num == 2) return true; 
-    if (Math.mod(num,2) == 0{ //we can eliminate even numbers hence improve performance
+    if (Math.mod(num,2) == 0){ //we can eliminate even numbers hence improve performance
         return false; 
     } 
 
