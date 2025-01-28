@@ -10,6 +10,9 @@ public Integer nextPrime(Integer num) {
 }
 
 public Boolean isPrime(Integer num){
+    if(num==1){
+        return false;
+    }
     Boolean isPrime = true;
     for(Integer i=2; i<num;i++){
         Integer remainder = Math.mod(num,i);
