@@ -1,7 +1,6 @@
 public Integer nextPrime(Integer num) {
     //code here
     //2,3,5,7,11,13..
-    Integer nextPrime = num;
     while(!isPrime(num)){
         num++;
     }
@@ -14,7 +13,7 @@ public Boolean isPrime(Integer num){
         return false;
     }
     Boolean isPrime = true;
-    for(Integer i=2; i<num;i++){
+    for(Integer i=2; i<num-1;i++){
         Integer remainder = Math.mod(num,i);
         if(remainder == 0){
             isPrime = false;
