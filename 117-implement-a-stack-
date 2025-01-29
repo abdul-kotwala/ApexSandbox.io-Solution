@@ -8,26 +8,22 @@ public class Stack {
     
     public Object pop() {
         //implement pop
-        if(objectList?.size() == 0){
-            return null;
-        }
-        
-        Object lastElement = objectList?.remove(objectList?.size() -1);
+        Object lastElement = objectList.size() == 0 ? null : objectList?.remove(objectList.size() -1);
         return lastElement;
     }
     
     public Integer size() {
         //implement size
-        return objectList?.size();
+        return objectList.size();
     }
     
     public Object peek(){
         //implement peek
-        return objectList[objectList?.size()-1];
+        return objectList.size() == 0 ? null : objectList[objectList.size()-1];
     }
     
     public Boolean isEmpty() {
         //implement isEmpty
-        return objectList?.isEmpty();
+        return objectList.isEmpty();
     }
 }
