@@ -8,7 +8,7 @@ public class Stack {
     
     public Object pop() {
         //implement pop
-        Object lastElement = objectList?.remove(objectList[objectList.size()-1]);
+        Object lastElement = objectList?.remove(objectList.size()-1);
         return lastElement;
     }
     
