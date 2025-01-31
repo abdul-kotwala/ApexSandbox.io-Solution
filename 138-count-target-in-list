@@ -1,0 +1,11 @@
+public Integer findTargetCount(List<Integer> nums, Integer target) {
+    // code here
+     if (nums == null || target == null) {
+        return 0; // Defensive check to prevent NullPointerException
+    }
+    Integer counter = 0;
+    for(Integer num : nums){
+        if(num==target) counter++;
+    }
+    return counter;
+}
