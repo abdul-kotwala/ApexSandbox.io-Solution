@@ -1,11 +1,9 @@
 public static Integer findLast(List<Integer> nums, Integer target) {
    // code here
    
-   if(nums == null || target == null){
-       return -1;
-   }
-
    for(Integer i= nums.size() - 1; i >=0 ; i--){
        if(nums[i] == target) return i;
    }
+
+   return -1;
 }
