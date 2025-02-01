@@ -2,5 +2,5 @@ public String convert15to18DigitId(String fifteenDigit)
 {
     //code here
     Id 18digitId = (Id) fifteenDigit;
-    return fifteenDigit.length() != 15 ? -1 : 18digitId;
+    return fifteenDigit.length() != 15 ? -1 : (String) 18digitId;
 }
