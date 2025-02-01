@@ -1,8 +1,7 @@
 public Boolean isPalindrome(String str){
     //code here
-    str = str.replaceAll('[^a-zA-Z0-9\\s+]', '').toLowerCase();
+    str = str.replaceAll('[^a-zA-Z0-9\\s+]', '').toLowerCase().deleteWhitespace();
     Integer strLength = str.length()-1;
-    System.debug(str);
     for(Integer i = 0; i< strLength ; i++){
         if(str.charAt(i) == str.charAt(strLength)){
             strLength--;
