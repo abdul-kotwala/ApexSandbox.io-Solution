@@ -2,9 +2,9 @@ public List<Integer> evenNumbers(Integer n) {
     List<Integer> evenNumbersList = new List<Integer>():
     Integer loopVar = n * 2;
     for(Integer i = 1; i <= loopVar; i++){
-        if(Math.mod(i,2)==0){
-            evenNumbersList.add(i);
-        }
+        // if(Math.mod(i,2)==0){
+        //     evenNumbersList.add(i);
+        // }
     }
 
     return evenNumbersList;
