@@ -1,0 +1,18 @@
+public static Integer search(List<Opportunity> opportunities, Integer target){
+    // solution here
+    Integer low = 0;
+    Integer high = opportunities.size()-1
+
+    while(low < high){
+        Integer mid = (high + low)/2;
+        if(opportunities.get(mid).Amount == target){
+            return mid;
+        }else if(opportunities.get(mid).Amount > target){
+            high = mid - 1;
+        }else{
+            low = mid + 1;
+        }
+    }
+
+    return -1;
+}
