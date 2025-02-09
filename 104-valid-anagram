@@ -6,7 +6,7 @@ public boolean isAnagram(String s1, String s2) {
     Map<String, Integer> frequencyOfCharsAtS2 = new Map<String, Integer>();
 
     for(Integer i=0; i<s1.length(); i++){
-        if(frequencyOfCharsAtS1.containsKey(s1.charAt(i))){
+        if(frequencyOfCharsAtS1.containsKey(String.valueOf(s1.charAt(i)))){
             Integer count = frequencyOfCharsAtS1.get(s1.charAt(i));
             frequencyOfCharsAtS1.put(s1.charAt(i), count++);
         }else{
