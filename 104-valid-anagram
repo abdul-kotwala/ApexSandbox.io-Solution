@@ -18,7 +18,7 @@ public boolean isAnagram(String s1, String s2) {
         if(frequencyMap.containsKey(s2Char)){
             frequencyMap.put(s2char,frequencyMap.get(s2Char) - 1);
         }else{
-            frequencyMap.put(s2char,1);
+            frequencyMap.put(s2char,-1);
         }
 
     }
