@@ -1,6 +1,7 @@
 public boolean isAnagram(String s1, String s2) {
     //Code here
     if(s1.length() != s2.length()) return false;
+    if(s1 == null || s2 == null) return false;
     
     Map<String, Integer> frequencyOfCharsAtS1 = new Map<String, Integer>();
     Map<String, Integer> frequencyOfCharsAtS2 = new Map<String, Integer>();
