@@ -3,33 +3,27 @@ public boolean isAnagram(String s1, String s2) {
     if(s1 == null || s2 == null) return false;
     if(s1.length() != s2.length()) return false;
     
-    Map<String, Integer> frequencyOfCharsAtS1 = new Map<String, Integer>();
-    Map<String, Integer> frequencyOfCharsAtS2 = new Map<String, Integer>();
+    Map<String, Integer> frequencyMap = new Map<String, Integer>();
 
-    for(Integer i=0; i<s1.length(); i++){
-        if(frequencyOfCharsAtS1.containsKey(String.valueOf(s1.charAt(i)))){
-            Integer count = frequencyOfCharsAtS1.get(String.valueOf(s1.charAt(i)));
-            frequencyOfCharsAtS1.put(String.valueOf(s1.charAt(i)), count+1);
+    for(Integer i = 0; i < s1.lenght(); i++){
+        String s1Char = s1.charAt(i);
+        String s2Char = s2.charAt(i);
+
+        if(frequencyMap.containsKey(s1Char)){
+            frequencyMap.put(s1Char,frequencyMap.get(s1Char) + 1);
         }else{
-            frequencyOfCharsAtS1.put(String.valueOf(s1.charAt(i)), 0);
+            frequencyMap.put(s1Char, 1);
         }
-    }
 
-    for(Integer i=0; i<s2.length(); i++){
-        if(frequencyOfCharsAtS2.containsKey(String.valueOf(s2.charAt(i)))){
-            Integer count = frequencyOfCharsAtS2.get(String.valueOf(s2.charAt(i)));
-            frequencyOfCharsAtS2.put(String.valueOf(s2.charAt(i)), count+1);
+        if(frequencyMap.containsKey(s2Char)){
+            frequencyMap.put(s2char,frequencyMap.get(s2Char) - 1);
         }else{
-            frequencyOfCharsAtS2.put(String.valueOf(s2.charAt(i)), 0);
+            frequencyMap.put(s2char,1);
         }
+
     }
-
-    if(frequencyOfCharsAtS1.keySet().size() != frequencyOfCharsAtS2.keySet().size()) return false;
-
-    for(String charVar : frequencyOfCharsAtS1.keySet()){
-        if(!frequencyOfCharsAtS2.containsKey(String.valueOf(charVar))) return false;
-        if(frequencyOfCharsAtS1.get(charVar) != frequencyOfCharsAtS2.get(charVar)) return false;
+    for (Integer count : frequencyMap.values()) {
+        if (count != 0) return false;
     }
-
     return true;
 }
