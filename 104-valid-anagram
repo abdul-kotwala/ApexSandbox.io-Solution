@@ -1,0 +1,34 @@
+public boolean isAnagram(String s1, String s2) {
+    //Code here
+    if(s1.length() != s2.length()) return false;
+    
+    Map<String, Integer> frequencyOfCharsAtS1 = new Map<String, Integer>();
+    Map<String, Integer> frequencyOfCharsAtS2 = new Map<String, Integer>();
+
+    for(Integer i=0; i<s1.length(); i++){
+        if(frequencyOfCharsAtS1.containsKey(s1.charAt(i))){
+            Integer count = frequencyOfCharsAtS1.get(s1.charAt(i));
+            frequencyOfCharsAtS1.put(s1.charAt(i), count++);
+        }else{
+            frequencyOfCharsAtS1.put(s1.charAt(i), 0);
+        }
+    }
+
+    for(Integer i=0; i<s2.length(); i++){
+        if(frequencyOfCharsAtS2.containsKey(s2.charAt(i))){
+            Integer count = frequencyOfCharsAtS2.get(s2.charAt(i));
+            frequencyOfCharsAtS2.put(s2.charAt(i), count++);
+        }else{
+            frequencyOfCharsAtS2.put(s2.charAt(i), 0);
+        }
+    }
+
+    if(frequencyOfCharsAtS1.keySet().size() != frequencyOfCharsAtS2.keySet().size()) return false;
+
+    for(String charVar : frequencyOfCharsAtS1.keySet()){
+        if(!frequencyOfCharsAtS2.containsKey(charVar)) return false;
+        if(frequencyOfCharsAtS1.get(charVar) != frequencyOfCharsAtS2.get(charVar)) return false;
+    }
+
+    return true;
+}
