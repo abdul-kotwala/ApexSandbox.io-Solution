@@ -1,23 +1,14 @@
 public void plusOne(List<Integer> numbers) {
     // code here
     Integer arraySize = numbers.size(); 
-    Integer lastDigit = numbers.get(arraySize - 1);
-    if(lastDigit < 9){
-        numbers.set(arraySize-1, lastDigit+1);
-        return;
-    }else{
-       //1,2,3,9
-        for(Integer i = arraySize-1 ; i>=0; i--){
-            if(numbers.get(i) == 9){
-                numbers.set(i,0);
-            }else{
-                break;
-            }
+    
+    for(Integer i = arraySize-1 ; i>=0; i-- ){
+        if(numbers.get(i) < 9){
+            numbers.set(i, numbers.get(i)+1);
+            return;
         }
-         numbers.add(0,1);
-        
-
+        numbers.set(i,0);
     }
 
-
+    numbers.add(0,1);
 }
