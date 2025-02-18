@@ -4,6 +4,6 @@ public void plusOne(List<Integer> numbers) {
     Integer lastDigit = numbers.get(arraySize - 1);
     if(lastDigit < 9){
         numbers.add(arraySize-1, lastDigit+1);
-        numbers.remove(arraySize-1);
+        numbers.remove(arraySize);
     }
 }
