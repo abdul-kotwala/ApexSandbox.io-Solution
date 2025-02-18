@@ -12,6 +12,7 @@ public void plusOne(List<Integer> numbers) {
                 numbers.set(i,0);
             }
         }
+         numbers.set(0,1);
 
     }
 
